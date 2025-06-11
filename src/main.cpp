@@ -88,8 +88,7 @@ void setup()
   Serial.println("\nVerbunden mit IP: " + WiFi.localIP().toString());
 
   nfc.begin();
-  uint32_t versiondata = nfc.getFirmwareVersion();
-  if (!versiondata)
+  if (!nfc.getFirmwareVersion())
   {
     Serial.println("PN532 nicht gefunden!");
     delay(1000);
@@ -115,10 +114,7 @@ void loop()
   uint8_t uid[7];
   uint8_t uidLength;
 
-  // Prüfe Tag in Reichweite (Timeout 1 Sek)
-  bool success = nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength, 1000);
-
-  if (success)
+  if (nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength, 1000))
   {
     Serial.print("Tag UID: ");
     for (uint8_t i = 0; i < uidLength; i++)
@@ -165,7 +161,7 @@ void loop()
 
           bool modeWeighing = digitalRead(modeSwitchPin) == HIGH;
 
-          if (true)
+          if (true) // TODO: Anpassen im finalen Code
           {
             weighSpool(spoolId, spoolmanUrl);
             assignSpool(spoolId, printerUrl);

@@ -11,9 +11,11 @@ HX711 scale;
 void weighSpool(const String &spoolId, const String &spoolmanUrl)
 {
 
-    const String measured_weight = scaleMeasureFixed();
+    const String measured_weight = scaleMeasureFixed(); //TODO: anpassen im finalen Code
+
     HTTPClient http;
     String url = spoolmanUrl + spoolId;
+    
     http.begin(url);
     http.addHeader("Content-Type", "application/json");
 
@@ -34,9 +36,8 @@ void weighSpool(const String &spoolId, const String &spoolmanUrl)
     http.end();
 }
 
-String scaleMeasureFixed()
+String scaleMeasureFixed() // remove in final code
 {
-
     int weight = 200;
     return (String)weight;
 }
@@ -55,7 +56,7 @@ void setupScale()
             ;
     }
 
-    scale.set_scale(4.242); // <-- Kalibrierfaktor hier anpassen!
+    scale.set_scale(4.242); // TODO: Kalibrierungsfaktor anpassen
     scale.tare();
     Serial.println("Waage initialisiert und nullgestellt.");
 }
