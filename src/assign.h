@@ -3,6 +3,6 @@
 
 #include <Arduino.h>
 
-void assignSpool(const String& spoolId, const String& baseUrl);
+void assignSpool(const String &spoolId, const String &baseUrl);
 
 #endif

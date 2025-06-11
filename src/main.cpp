@@ -92,8 +92,7 @@ void setup()
   if (!versiondata)
   {
     Serial.println("PN532 nicht gefunden!");
-    while (true)
-      delay(1000);
+    delay(1000);
   }
   nfc.SAMConfig();
   Serial.println("NFC bereit.");

@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 
-void weighSpool(const String& spoolId, const String& baseUrl);
+void weighSpool(const String &spoolId, const String &baseUrl);
 String scaleMeasure();
 void setupScale();
 void checkTaraButton();
