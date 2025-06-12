@@ -8,12 +8,12 @@
 #include "weigh.h"
 
 // WLAN-Daten
-const char *ssid = "Galaxy_S23_Ultra";
-const char *password = "12345678";
+const char *ssid = ""; //change this
+const char *password = ""; //change this
 
 // URLs
-const char *printerUrl = "https://shared-HOLPQLFDBSSZK8ARMW6Z1HZAGW2XCYI6.octoeverywhere.com";
-const char *spoolmanUrl = "https://shared-23M5DH8QU9DNFTOE6IZY0F7OS2EUB5MJ.octoeverywhere.com/api/v1/spool/";
+const char *printerUrl = ""; // change this
+const char *spoolmanUrl = ""; // change this
 
 // I2C Pins PN532
 #define PN532_IRQ 32
